@@ -8,6 +8,9 @@ import { GoogleCalendarModule } from './google-calendar/google-calendar.module';
 import { GoogleSheetsModule } from './google-sheets/google-sheets.module';
 import { CvParserModule } from './cv-parser/cv-parser.module';
 import { GoogleDriveModule } from './google-drive/google-drive.module';
+import { ScheduleModule } from '@nestjs/schedule';
+import { SyncModule } from './sync/sync.module';
+
 
 @Module({
   imports: [
@@ -19,6 +22,8 @@ import { GoogleDriveModule } from './google-drive/google-drive.module';
     GoogleSheetsModule,
     CvParserModule,
     GoogleDriveModule,
+    ScheduleModule.forRoot(),
+    SyncModule,
   ],
   controllers: [AppController],
   providers: [AppService],
